@@ -4,9 +4,7 @@ I only forked it to add my dream feature: automatically split "Artist - Track" a
 
 Download: [Latest release](https://github.com/Alsweider/ScrubblerXT/releases/latest)
 
-![2025-11-22 01_33_07-Last fm ScrubblerXT 1 0 0 0](https://github.com/user-attachments/assets/ef5d45cc-0991-4a67-a935-8f012c8d4629)
-
-
+![2025-11-22 22_11_59-Last fm ScrubblerXT 1 1 0 0](https://github.com/user-attachments/assets/64827733-13f3-46b3-a2f3-0d931ae73bb3)
 
 
 ---
