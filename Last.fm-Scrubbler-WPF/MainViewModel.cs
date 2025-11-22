@@ -157,7 +157,7 @@ namespace Scrubbler
       _fileOperator = fileOperator ?? throw new ArgumentNullException(nameof(fileOperator));
       _logger = logger;
       Tabs = SetupViewModels(localFileFactory, directoryOperator, serializer, gitHubClient, processManager, discogsClient, fileParserFactory);
-      TitleString = $"Last.fm Scrubbler WPF Beta {Assembly.GetExecutingAssembly().GetName().Version}";
+      TitleString = $"Last.fm ScrubblerXT {Assembly.GetExecutingAssembly().GetName().Version}";
       CurrentStatus = "Waiting to scrobble...";
     }
 

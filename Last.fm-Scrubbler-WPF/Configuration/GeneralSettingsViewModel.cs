@@ -151,7 +151,19 @@ namespace Scrubbler.Configuration
       try
       {
         EnableControls = false;
-        var releases = await _gitHubClient.Repository.Release.GetAll("SHOEGAZEssb", "Last.fm-Scrubbler-WPF");
+        var releases = await _gitHubClient.Repository.Release.GetAll("Alsweider", "ScrubblerXT");
+
+        if (releases.Count == 0)
+        {
+          if (manualCheck)
+            _windowManager.MessageBoxService.ShowDialog(
+                "No releases found for this repository.",
+                "Update Check",
+                IMessageBoxServiceButtons.OK
+            );
+          return; // Abbruch, kein Release vorhanden
+        }
+
         var newestRelease = releases[0];
 
         Version newestVersion;
