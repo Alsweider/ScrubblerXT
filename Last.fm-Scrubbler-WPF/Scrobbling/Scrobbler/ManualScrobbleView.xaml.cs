@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -51,5 +52,22 @@ namespace Scrubbler.Scrobbling.Scrobbler
         }
       }
     }
+
+    private void ClearButton_Click(object sender, RoutedEventArgs e)
+    {
+      ArtistTextBox.Text = string.Empty;
+      TrackTextBox.Text = string.Empty;
+
+      // Falls Album etc. gebunden: direkt im ViewModel setzen
+      if (DataContext is ManualScrobbleViewModel vm)
+      {
+        vm.Album = string.Empty;
+        vm.AlbumArtist = string.Empty;
+        vm.Duration = TimeSpan.FromSeconds(1);
+        vm.Amount = 1;
+        vm.ScrobbleTimeVM.Time = DateTime.Now;
+      }
+    }
+
   }
 }

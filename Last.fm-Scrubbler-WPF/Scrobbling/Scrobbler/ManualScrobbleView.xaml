@@ -92,7 +92,17 @@
         <Label Grid.Row="13" Grid.Column="0" Content="Amount:"/>
         <xctk:IntegerUpDown Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="3" Minimum="1" Value="{Binding Amount}" Maximum="1000"/>
 
-        <!-- Scrobble Button -->
-        <scrobbling:ScrobbleButtonControl Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="5"/>
+        <!-- Scrobble Button --><!--
+        <scrobbling:ScrobbleButtonControl Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="5"/>-->
+        
+        <!-- Scrobble + Preview -->
+        <scrobbling:ScrobbleButtonControl Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+        <!-- Clear Button -->
+        <Button Grid.Row="15"
+        Grid.Column="4"
+        Margin="5,0,0,0"
+        Content="Clear"
+        Click="ClearButton_Click"/>
     </Grid>
 </UserControl>
