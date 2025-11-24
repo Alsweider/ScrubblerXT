@@ -26,13 +26,13 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
 
     <Label Grid.Row="0" Grid.Column="0" Content="Artist:"/>
     <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Artist, UpdateSourceTrigger=PropertyChanged}"/>
