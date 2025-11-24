@@ -32,7 +32,8 @@ namespace Scrubbler.Scrobbling
     /// <param name="fileOperator">FileOperator used to interface with files.</param>
     /// <param name="lastFMClient">Last.fm client.</param>
     /// <param name="discogsClient">Client used to interact with Discogs.com</param>
-    /// <param name="fileParserFactory">Factory for creating <see cref="IFileParser"/></param>
+    /// <param name="fileParserFactory">Factory for creating <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/></param>
+    /// <param name="serializer">…</param>
     public ScrobblerViewModel(IExtendedWindowManager windowManager, ILocalFileFactory localFileFactory, IFileOperator fileOperator, ILastFMClient lastFMClient,
                               IDiscogsDataBaseClient discogsClient, IFileParserFactory fileParserFactory, ISerializer serializer)
       : base("Scrobbler")
@@ -60,7 +61,9 @@ namespace Scrubbler.Scrobbling
     /// <param name="fileOperator">FileOperator used to interface with files.</param>
     /// <param name="lastFMClient">Last.fm client.</param>
     /// <param name="discogsClient">Client used to interact with Discogs.com</param>
-    /// <param name="fileParserFactory">Factory for creating <see cref="IFileParser"/></param>
+    /// Interface for a ViewModel managing a <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/>.
+    /// <param name="fileParserFactory">Factory for creating <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/></param>
+    /// <param name="serializer">…</param>
     private ScrobbleViewModelBase[] CreateViewModels(IExtendedWindowManager windowManager, ILocalFileFactory localFileFactory, IFileOperator fileOperator, ILastFMClient lastFMClient,
                                   IDiscogsDataBaseClient discogsClient, IFileParserFactory fileParserFactory, ISerializer serializer)
     {

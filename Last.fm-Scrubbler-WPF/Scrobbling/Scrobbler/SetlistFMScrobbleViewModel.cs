@@ -160,7 +160,7 @@ namespace Scrubbler.Scrobbling.Scrobbler
     private readonly SetlistFmApi.SetlistFmApi _setlistFMClient;
 
     /// <summary>
-    /// The last clicked <see cref="Artist"/>.
+    /// The last clicked <see cref="ScrubblerLib.Data.Artist"/>.
     /// </summary>
     private ScrubblerLib.Data.Artist _lastClickedArtist;
 

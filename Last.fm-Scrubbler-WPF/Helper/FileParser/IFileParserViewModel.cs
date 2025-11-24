@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Scrubbler.Helper.FileParser
 {
   /// <summary>
-  /// Interface for a ViewModel managing a <see cref="IFileParser"/>.
+  /// Interface for a ViewModel managing a <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/>.
   /// </summary>
   public interface IFileParserViewModel : INotifyPropertyChangedEx
   {
@@ -34,6 +34,12 @@ namespace Scrubbler.Helper.FileParser
     /// <returns>Parse result.</returns>
     FileParseResult Parse(string file, TimeSpan defaultDuration, ScrobbleMode scrobbleMode);
 
+    /// <summary>
+    /// Creates a configuration object for the parser.
+    /// </summary>
+    /// <param name="scrobbleMode">The scrobble mode.</param>
+    /// <param name="defaultDuration">Default duration for tracks.</param>
+    /// <returns>The created configuration.</returns>
     IFileParserConfiguration MakeConfig(ScrobbleMode scrobbleMode, TimeSpan defaultDuration);
   }
 }

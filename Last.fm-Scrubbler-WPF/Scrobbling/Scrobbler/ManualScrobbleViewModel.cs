@@ -26,6 +26,13 @@ namespace Scrubbler.Scrobbling.Scrobbler
         _scrobbleFeature.Artist = value;
         NotifyOfPropertyChange();
         NotifyCanProperties();
+
+        // Split if the split checkbox is active
+        if (SplitArtistTrack)
+        {
+          SplitArtistField();
+        }
+
       }
     }
 
@@ -90,7 +97,7 @@ namespace Scrubbler.Scrobbling.Scrobbler
       get => _scrobbleFeature.Amount;
       set
       {
-        if(Amount != value)
+        if (Amount != value)
         {
           _scrobbleFeature.Amount = value;
           NotifyOfPropertyChange();
@@ -190,5 +197,58 @@ namespace Scrubbler.Scrobbling.Scrobbler
       NotifyOfPropertyChange(nameof(CanScrobble));
       NotifyOfPropertyChange(nameof(CanPreview));
     }
+
+    private bool _splitArtistTrack;
+    /// <summary>
+    /// If true, the content of the Artist field will be automatically split into 'Artist - Track'.
+    /// </summary>
+    public bool SplitArtistTrack
+    {
+      get => _splitArtistTrack;
+      set
+      {
+        if (_splitArtistTrack != value)
+        {
+          _splitArtistTrack = value;
+          NotifyOfPropertyChange();
+          if (_splitArtistTrack)
+          {
+            SplitArtistField();
+          }
+        }
+      }
+    }
+
+    /// <summary>
+    /// Splits the Artist field content into 'Artist - Track'.
+    /// </summary>
+    private void SplitArtistField()
+    {
+      if (string.IsNullOrWhiteSpace(Artist))
+        return;
+
+      var parts = Artist.Split(new[] { '-' }, 2);
+      if (parts.Length == 2)
+      {
+        Artist = parts[0].Trim();
+        Track = parts[1].Trim();
+      }
+    }
+
+    /// <summary>
+    /// Clears the input fields in Manual Scrobbler
+    /// </summary>
+    public void Clear()
+    {
+      Artist = string.Empty;
+      Track = string.Empty;
+      Album = string.Empty;
+      AlbumArtist = string.Empty;
+      Duration = TimeSpan.FromSeconds(1);
+      Amount = 1;
+      ScrobbleTimeVM.Time = DateTime.Now;
+    }
+
+
   }
 }

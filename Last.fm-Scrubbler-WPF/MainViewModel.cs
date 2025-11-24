@@ -131,7 +131,7 @@ namespace Scrubbler
     /// <param name="windowManager">WindowManager used to display dialogs.</param>
     /// <param name="client">Factory for creating <see cref="ILastFMClient"/>s.</param>
     /// <param name="scrobblerFactory">Factory for creating <see cref="IAuthScrobbler"/>s.</param>
-    /// <param name="localFileFactory">Factory for creating <see cref="Scrobbling.Data.ILocalFile"/>s.</param>
+    /// <param name="localFileFactory">Factory for creating <see cref="ScrubblerLib.Data.ILocalFile"/>...</param>
     /// <param name="fileOperator">FileOperator for interfacing with the hard disk.</param>
     /// <param name="directoryOperator">DirectoryOperator for operating with directories.</param>
     /// <param name="serializer">Serializer for <see cref="User"/>s.</param>
@@ -139,7 +139,7 @@ namespace Scrubbler
     /// <param name="gitHubClient">GitHub client to check for updates.</param>
     /// <param name="processManager">ProcessManager for working with processor functions.</param>
     /// <param name="discogsClient">Client used to interact with Discogs.com</param>
-    /// <param name="fileParserFactory">Factory for creating <see cref="IFileParser"/></param>
+    /// <param name="fileParserFactory">Factory for creating <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/></param> 
     public MainViewModel(IExtendedWindowManager windowManager, ILastFMClient client, IScrobblerFactory scrobblerFactory, ILocalFileFactory localFileFactory,
                          IFileOperator fileOperator, IDirectoryOperator directoryOperator, ISerializer serializer, ILogger logger, IGitHubClient gitHubClient,
                          IProcessManager processManager, IDiscogsDataBaseClient discogsClient, IFileParserFactory fileParserFactory)
@@ -184,13 +184,13 @@ namespace Scrubbler
     /// <summary>
     /// Creates the ViewModels.
     /// </summary>
-    /// <param name="localFileFactory">Factory for creating <see cref="Scrobbling.Data.ILocalFile"/>s.</param>
+    /// <param name="localFileFactory">Factory for creating <see cref="ScrubblerLib.Data.ILocalFile"/>s.</param>
     /// <param name="directoryOperator">DirectoryOperator for operating with directories.</param>
     /// <param name="serializer">Serializer for <see cref="User"/>s.</param>
     /// <param name="gitHubClient">GitHub client to check for updates.</param>
     /// <param name="processManager">ProcessManager for working with processor functions.</param>
     /// <param name="discogsClient">Client used to interact with Discogs.com</param>
-    /// <param name="fileParserFactory">Factory for creating <see cref="IFileParser"/></param>
+    /// <param name="fileParserFactory">Factory for creating <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/></param>
     private TabViewModel[] SetupViewModels(ILocalFileFactory localFileFactory, IDirectoryOperator directoryOperator, ISerializer serializer, IGitHubClient gitHubClient,
                                  IProcessManager processManager, IDiscogsDataBaseClient discogsClient, IFileParserFactory fileParserFactory)
     {

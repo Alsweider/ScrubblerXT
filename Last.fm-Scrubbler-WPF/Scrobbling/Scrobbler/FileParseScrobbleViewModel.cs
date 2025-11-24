@@ -62,7 +62,7 @@ namespace Scrubbler.Scrobbling.Scrobbler
     private string _csvFilePath;
 
     /// <summary>
-    /// The selected <see cref="Scrobbler.ScrobbleMode"/>.
+    /// The selected <see cref="ScrubblerLib.Helper.FileParser.ScrobbleMode"/>.
     /// </summary>
     public ScrobbleMode ScrobbleMode
     {
@@ -132,8 +132,9 @@ namespace Scrubbler.Scrobbling.Scrobbler
     /// Constructor.
     /// </summary>
     /// <param name="windowManager">WindowManager used to display dialogs.</param>
-    /// <param name="parserFactory">The factory used to create <see cref="IFileParser"/>.</param>
+    /// <param name="parserFactory">The factory used to create <see cref="ScrubblerLib.Helper.FileParser.IFileParser{T}"/>.</param>
     /// <param name="fileOperator">FileOperator used to write to disk.</param>
+    /// <param name="serializer">…</param>
     public FileParseScrobbleViewModel(IExtendedWindowManager windowManager, IFileParserFactory parserFactory, IFileOperator fileOperator, ISerializer serializer)
       : base(windowManager, "File Parse Scrobbler")
     {
